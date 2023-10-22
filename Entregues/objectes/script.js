@@ -4,10 +4,6 @@ function Persona(nom, cognom, edat) {
     this.edat = edat;
 }
 
-Persona.prototype.mostrarInfo = function () {
-    return "Nom: " + this.nom + "<br>Cognom: " + this.cognom + "<br>Edat: " + this.edat;
-};
-
 function RecopilarInfo() {
     var nom = prompt("Introdueix el teu nom:");
     var cognom = prompt("Introdueix el teu cognom:");
@@ -18,9 +14,14 @@ function RecopilarInfo() {
 
 function MostrarInfo() {
     var infoContainer = document.getElementById("infoContainer");
-    infoContainer.innerHTML = persona.mostrarInfo();
-}
+   if (persona) {
+            infoContainer.innerHTML = " Aquí tens la teva informació: <li>Nom: " + persona.nom + "<li>Cognom: " + persona.cognom + "<li>Edat: " + usuario.edat;
+        } else {
+            infoContainer.innerHTML = "No s'ha guardat la informació.";
+        }
+    }
+    var btnGuardar = document.getElementById("botonRecopilar");
+    var btnMostrar = document.getElementById("botonMostrar");
 
-document.getElementById("botonRecopilar").addEventListener("click", RecopilarInfo);
-document.getElementById("botonMostrar").addEventListener("click", MostrarInfo);
-
+    btnGuardar.addEventListener("click", obtenerInformacion);
+    btnMostrar.addEventListener("click", mostrarInformacion);
