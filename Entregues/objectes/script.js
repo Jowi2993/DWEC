@@ -20,8 +20,8 @@ function MostrarInfo() {
             infoContainer.innerHTML = "No s'ha guardat la informació.";
         }
     }
-    var btnGuardar = document.getElementById("botonRecopilar");
-    var btnMostrar = document.getElementById("botonMostrar");
+    var botonGuardar = document.getElementById("botonRecopilar");
+    var botonMostrar = document.getElementById("botonMostrar");
 
     btnGuardar.addEventListener("click", obtenerInformacion);
     btnMostrar.addEventListener("click", mostrarInformacion);
