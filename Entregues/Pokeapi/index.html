@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeApi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PokeAPI</h1>
+    <li>Elige cuántos Pokemon quieres</li>
+    <input type="number" id="numPoke">
+    <li>Buscar Pokémon por nombre:</li>
+    <input type="text" id="searchPokemon" oninput="buscarPokemonPorNombre(this.value)" placeholder="Nombre del Pokémon">
+    <div id="searchResults"></div>
+    <button id="addPoke">Get Pokemons</button>
+    <button id="fight">Fight</button>
+    <div id="pokeList"></div>
+    <div id="pagination"></div>
+
+    <template id="poke-template">
+        <article class="poke-card">
+            <h2 id="name"></h2>
+            <img src="" alt="">
+            <p id="types"></p>
+            <p id="stats"></p>
+        </article>
+    </template>
+
+    <div id="result" class="hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
